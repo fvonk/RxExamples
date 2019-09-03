@@ -22,7 +22,7 @@
 
 import UIKit
 import RxSwift
-import ReactiveSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
 
@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
   @IBOutlet weak var itemAdd: UIBarButtonItem!
   
   private let bag = DisposeBag()
-  private let images = Variable<[UIImage]>([])
+  private let images = BehaviorRelay<[UIImage]>(value: [])
   private var imageCache = [Int]()
 
   // MARK: - View Controller life cycle -
@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    images.asObservable()
+    images
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak self] photos in
         guard let preview = self?.imagePreview else { return }
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
       })
       .disposed(by: bag)
 
-    images.asObservable()
+    images
       .subscribe(onNext: { [unowned self] photos in
         self.imagePreview.image = UIImage.collage(images: photos, size: self.imagePreview.frame.size)
       })
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func actionClear() {
-    images.value = []
+    images.accept([])
     imageCache = []
   }
 
@@ -80,12 +80,12 @@ class MainViewController: UIViewController {
     guard let image = imagePreview.image else { return }
     
     PhotoWriter.save(image)
-      .subscribe(onError: { [weak self] error in
-        self?.showMessage("Error", description: error.localizedDescription)
-        }, onCompleted: { [weak self] in
-          self?.showMessage("Saved")
-          self?.actionClear()
-      })
+        .subscribe(onCompleted: { [weak self] in
+            self?.showMessage("Saved")
+            self?.actionClear()
+        }, onError: { [weak self] (error) in
+            self?.showMessage("Error", description: error.localizedDescription)
+        })
       .disposed(by: bag)
   }
 
@@ -110,7 +110,7 @@ class MainViewController: UIViewController {
       })
     .subscribe(onNext: { [weak self] newImage in
       guard let images = self?.images else { return }
-      images.value.append(newImage)
+        images.accept(images.value + [newImage])
     }, onDisposed: {
       print("completed photo selection")
     })

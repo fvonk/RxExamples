@@ -37,13 +37,13 @@ class PhotoWriter: NSObject {
     callback(error)
   }
 
-  static func save(_ image: UIImage) -> Observable<Void> {
-    return Observable.create({ observer in
+  static func save(_ image: UIImage) -> Completable {
+    return Completable.create(subscribe: { completable in
       let writer = PhotoWriter(callBack: { error in
         if let error = error {
-          observer.onError(error)
+            completable(.error(error))
         } else {
-          observer.onCompleted()
+            completable(.completed)
         }
       })
 
