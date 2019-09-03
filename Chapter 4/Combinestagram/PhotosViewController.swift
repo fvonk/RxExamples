@@ -90,16 +90,17 @@ class PhotosViewController: UICollectionViewController {
 
   // MARK: - Actions -
 
-  private func errorMessage() {
-    showAlert(title: "No Access to Camera Roll",
-              description: "You can grant access to Combinestogram from the Settings app")
-      .take(5.0, scheduler: MainScheduler.instance)
-      .subscribe(onDisposed: { [weak self] in
-      self?.dismiss(animated: true, completion: nil)
-      _ = self?.navigationController?.popViewController(animated: true)
-    })
-    .disposed(by: bag)
-  }
+    private func errorMessage() {
+        showAlert(title: "No Access to Camera Roll",
+                  description: "You can grant access to Combinestogram from the Settings app")
+            .asObservable()
+            .take(5.0, scheduler: MainScheduler.instance)
+            .subscribe(onDisposed: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+                _ = self?.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: bag)
+    }
 
   // MARK: UICollectionView
 

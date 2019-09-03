@@ -30,14 +30,14 @@ example(of: "elementAt") {
 
     strikes
         .elementAt(2)
-        .subscribe(onNext: { _ in
-            print("You're out!")
+        .subscribe(onNext: { e in
+            print("You're out!", e)
         })
         .disposed(by: disposeBag)
 
     strikes.onNext("X")
-    strikes.onNext("X")
-    strikes.onNext("X")
+    strikes.onNext("X2")
+    strikes.onNext("X3")
 }
 
 example(of: "filter") { 
