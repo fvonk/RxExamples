@@ -119,6 +119,7 @@ class MainViewController: UIViewController {
     navigationController!.pushViewController(photosViewController, animated: true)
 
     newPhotos
+        .ignoreElements()
         .subscribe(onCompleted: { [weak self] in
             self?.updateNavigationIcon()
         })

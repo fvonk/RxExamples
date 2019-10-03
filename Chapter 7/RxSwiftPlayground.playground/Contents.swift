@@ -91,3 +91,4 @@ example(of: "flatMapLatest") {
     ryan.score.value = 95
     charlotte.score.value = 100
 }
+

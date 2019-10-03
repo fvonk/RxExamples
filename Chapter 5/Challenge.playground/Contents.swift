@@ -2,6 +2,62 @@
 
 import RxSwift
 
+protocol LETTER: Equatable {}
+class A: LETTER {
+    
+}
+class B: LETTER {
+    
+}
+func create() -> some LETTER {
+    A()
+}
+let t = create()
+let t2 = create()
+print(t == t2)
+print(create() is A)
+print(create() is B)
+print(create() is LETTER)
+LazyMapSequence
+
+
+example(of: "test") {
+    
+    var start = 0
+    func getStartNumber() -> Int {
+        print("getStartNumber")
+        start += 1
+        return start
+    }
+    
+    let numbers = Observable<Int>.create { observer in
+        print("once")
+        let start = getStartNumber()
+        observer.onNext(start)
+        observer.onNext(start+1)
+        observer.onNext(start+2)
+//        observer.onCompleted()
+        return Disposables.create {
+            print("disposed")
+        }
+    }//.share(replay: 2)
+    
+    numbers
+        .subscribe(onNext: { el in
+            print("element [\(el)]")
+        }, onCompleted: {
+            print("-------------")
+        })
+    
+    numbers
+        .subscribe(onNext: { el in
+            print("element2 [\(el)]")
+        }, onCompleted: {
+            print("-------------2")
+        })
+}
+
+
 example(of: "Challenge 1") {
     
     let disposeBag = DisposeBag()
