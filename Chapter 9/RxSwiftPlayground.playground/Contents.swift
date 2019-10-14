@@ -115,7 +115,7 @@ example(of: "combineLatest") {
 
 example(of: "combine user choice and value") {
     let disposeBag = DisposeBag()
-    let choice: Observable<DateFormatter.Style> = Observable.of(.short, .long)
+    let choice: Observable<DateFormatter.Style> = Observable.of(.long, .short)
     let dates = Observable.of(Date())
 
     let observable = Observable.combineLatest(choice, dates) { (format, when) -> String in
@@ -135,6 +135,8 @@ example(of: "zip") {
         case cloudy
         case sunny
     }
+    
+    let disposeBag = DisposeBag()
 
     let left: Observable<Weather> = Observable.of(.sunny, .cloudy, .cloudy, .sunny)
     let right = Observable.of("Lisbon", "Copenhagen", "London", "Madrid", "Vienna")
@@ -156,17 +158,19 @@ example(of: "withLatestFrom") {
     let button = PublishSubject<Void>()
     let textField = PublishSubject<String>()
 
-    //  let observable = button.withLatestFrom(textField)
-    let observable = textField.sample(button)
+    let observable = button.withLatestFrom(textField).distinctUntilChanged()
+//    let observable = textField.sample(button)
     let disposable = observable.subscribe(onNext: { value in
         print(value)
     })
 
     textField.onNext("Par")
+    button.onNext(())
     textField.onNext("Pari")
     textField.onNext("Paris")
-    button.onNext()
-    button.onNext()
+    button.onNext(())
+    textField.onNext("Paris")
+    button.onNext(())
 }
 
 // MARK: - Switches -
@@ -234,7 +238,9 @@ example(of: "reduce") {
 example(of: "scan") {
     let disposeBag = DisposeBag()
     let source = Observable.of(1, 3, 5, 7, 9)
-    let observable = source.scan(0, accumulator: +)
+    let scan = source.scan(0, accumulator: +)
+    
+    let observable = Observable.zip(source, scan)
 
     observable.subscribe(onNext: { value in
         print(value)
