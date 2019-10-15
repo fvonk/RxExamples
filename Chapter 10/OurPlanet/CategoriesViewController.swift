@@ -25,14 +25,25 @@ import RxSwift
 import RxCocoa
 
 class CategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet var tableView: UITableView!
-
+    
     let categories = Variable<[EOCategory]>([])
     let disposeBag = DisposeBag()
-
+    
+    let activityIndicator = UIActivityIndicatorView()
+    let download = DownloadView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        
+        view.addSubview(download)
+        view.layoutIfNeeded()
+        print(download.frame)
         
         categories
             .asObservable()
@@ -45,8 +56,11 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         
         startDownload()
     }
-
+    
     func startDownload() {
+        download.progress.progress = 0.0
+        download.label.text = "Download: 0%"
+        
         let eoCategories = EONET.categories
         
         let downloadedEvents = eoCategories.flatMap { categories in
@@ -68,6 +82,30 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
                 }
             }
         }
+        .do(onCompleted: { [weak self] in
+            DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
+                self?.download.isHidden = true
+            }
+        })
+        
+        eoCategories.flatMap { categories in
+            return updatedCategories.scan(0) { count, _ in
+                print(count)
+                return count + 1
+            }
+            .startWith(0)
+            .map { ($0, categories.count) }
+        }
+        .subscribe(onNext: { tuple in
+            DispatchQueue.main.async { [weak self] in
+                let progress = Float(tuple.0) / Float(tuple.1)
+                self?.download.progress.progress = progress
+                let percent = Int(progress * 100.0)
+                self?.download.label.text = "Download: \(percent)%"
+            }
+        })
+            .disposed(by: disposeBag)
         
         eoCategories
             .concat(updatedCategories)
@@ -80,20 +118,20 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.value.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell")!
-
+        
         let category = categories.value[indexPath.row]
         cell.detailTextLabel?.text = category.description
         cell.textLabel?.text = "\(category.name) (\(category.events.count))"
         cell.accessoryType = (category.events.count > 0) ? .disclosureIndicator : .none
-
+        
         return cell
     }
     
     // MARK: - UITableViewDelegate -
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories.value[indexPath.row]
         if !category.events.isEmpty {
@@ -105,6 +143,6 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-  
+    
 }
 
