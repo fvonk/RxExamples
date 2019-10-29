@@ -37,12 +37,13 @@ class ViewController: UIViewController {
   @IBOutlet private var iconLabel: UILabel!
   @IBOutlet private var cityNameLabel: UILabel!
 
-  private let bag = DisposeBag()
+    @IBOutlet weak var `switch`: UISwitch!
+    private let bag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     style()
 
     ApiController.shared.currentWeather(city: "RxSwift")
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
         self.cityNameLabel.text = data.cityName
       })
       .disposed(by: bag)
-
+    
     let search = searchCityName.rx.controlEvent(.editingDidEndOnExit)
       .map { self.searchCityName.text ?? "" }
       .filter { !$0.isEmpty }
@@ -64,9 +65,17 @@ class ViewController: UIViewController {
       }
       .asDriver(onErrorJustReturn: ApiController.Weather.empty)
 
-    search.map { "\($0.temperature)° C" }
-      .drive(tempLabel.rx.text)
-      .disposed(by: bag)
+    Observable.combineLatest(search.asObservable(), self.switch.rx.isOn.asObservable())
+        .map { value, on in
+            if on {
+                return "\(value.temperature)° C"
+            } else {
+                return "\(Float(value.temperature) * 1.8 + 32)° F"
+            }
+        }
+    .asDriver(onErrorJustReturn: "")
+    .drive(tempLabel.rx.text)
+    .disposed(by: bag)
 
     search.map { $0.icon }
       .drive(iconLabel.rx.text)
