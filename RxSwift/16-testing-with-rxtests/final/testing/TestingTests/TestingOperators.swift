@@ -100,13 +100,13 @@ class TestingOperators : XCTestCase {
 
     // 3
     let filterObservable = observable.filter {
-      $0 < 3
+      $0 < 4
     }
 
     // 4
-    scheduler.scheduleAt(0) {
+//    scheduler.scheduleAt(0) {
       self.subscription = filterObservable.subscribe(observer)
-    }
+//    }
 
     // 5
     scheduler.start()
@@ -117,7 +117,7 @@ class TestingOperators : XCTestCase {
     }
 
     // 7
-    XCTAssertEqual(results, [1, 2, 2, 1])
+    XCTAssertEqual(results, [1, 2, 3, 2, 1])
   }
 
   func testToArray() throws {

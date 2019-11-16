@@ -84,7 +84,10 @@ class TestingViewModel : XCTestCase {
 
   func testColorIsRedWhenHexStringIsFF0000() throws {
     // 1
-    let colorObservable = viewModel.color.asObservable().subscribeOn(scheduler)
+    let colorObservable = viewModel.color.asObservable().do(onNext: { (color) in
+        print(color)
+        print()
+    }).subscribeOn(scheduler)
 
     // 2
     viewModel.hexString.accept("#ff0000")
