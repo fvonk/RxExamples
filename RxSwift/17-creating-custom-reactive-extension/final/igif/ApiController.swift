@@ -32,7 +32,7 @@ import RxSwift
 class ApiController {
   static let shared = ApiController()
 
-  private let apiKey = "<#Your Key#>"
+  private let apiKey = "9F9qPLVKl1Lj0MVZCwgA6XuykouxAvrS"
   
   func search(text: String) -> Observable<[GiphyGif]> {
     let url = URL(string: "http://api.giphy.com/v1/gifs/search")!
