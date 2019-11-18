@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29D8B8E3212D36D0EFDFE8D9 /* Pods_TweetieAbstract_TweetieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531F35722FC3C94C7F3F15CC /* Pods_TweetieAbstract_TweetieTests.framework */; };
+		4744767928D3C7FAE2E4F954 /* Pods_TweetieAbstract_Tweetie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9D196A08F19FC20BC19801 /* Pods_TweetieAbstract_Tweetie.framework */; };
+		615EF3A9021FB51205ABA4EA /* Pods_TweetieAbstract_MacTweetie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D32BF5C86A4E449A79B3CD /* Pods_TweetieAbstract_MacTweetie.framework */; };
 		9C07B8051DECC926005301ED /* TimelineFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C07B8041DECC926005301ED /* TimelineFetcher.swift */; };
 		9C07B8081DED7C16005301ED /* Reachability+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C07B8071DED7C16005301ED /* Reachability+.swift */; };
 		9C1EEAD41DF424B5009705BD /* ListPeopleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EEAD31DF424B5009705BD /* ListPeopleViewModelTests.swift */; };
@@ -97,6 +100,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0626B05239ABBEDD4E8FA978 /* Pods-TweetieAbstract-MacTweetie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieAbstract-MacTweetie.release.xcconfig"; path = "Target Support Files/Pods-TweetieAbstract-MacTweetie/Pods-TweetieAbstract-MacTweetie.release.xcconfig"; sourceTree = "<group>"; };
+		23CF6AC095A68538B90F5546 /* Pods-TweetieAbstract-MacTweetie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieAbstract-MacTweetie.debug.xcconfig"; path = "Target Support Files/Pods-TweetieAbstract-MacTweetie/Pods-TweetieAbstract-MacTweetie.debug.xcconfig"; sourceTree = "<group>"; };
+		459066C47B1422DA15FB799B /* Pods-TweetieAbstract-Tweetie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieAbstract-Tweetie.debug.xcconfig"; path = "Target Support Files/Pods-TweetieAbstract-Tweetie/Pods-TweetieAbstract-Tweetie.debug.xcconfig"; sourceTree = "<group>"; };
+		531F35722FC3C94C7F3F15CC /* Pods_TweetieAbstract_TweetieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetieAbstract_TweetieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7892ACDCAB6E3117EA27C28D /* Pods-TweetieAbstract-TweetieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieAbstract-TweetieTests.release.xcconfig"; path = "Target Support Files/Pods-TweetieAbstract-TweetieTests/Pods-TweetieAbstract-TweetieTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C07B8041DECC926005301ED /* TimelineFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineFetcher.swift; sourceTree = "<group>"; };
 		9C07B8071DED7C16005301ED /* Reachability+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+.swift"; sourceTree = "<group>"; };
 		9C1EEAD11DF424B5009705BD /* TweetieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +164,10 @@
 		9CA4729621BD3B8900057E90 /* user_timeline.json-contributor_details-false-count-100-include_rts-true-screen_name-ashfurrow */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "user_timeline.json-contributor_details-false-count-100-include_rts-true-screen_name-ashfurrow"; sourceTree = "<group>"; };
 		9CA4729721BD3B8900057E90 /* user_timeline.json-contributor_details-false-count-100-include_rts-true-screen_name-freak4pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "user_timeline.json-contributor_details-false-count-100-include_rts-true-screen_name-freak4pc"; sourceTree = "<group>"; };
 		9CA4729821BD3B8900057E90 /* user_timeline.json-contributor_details-false-count-100-include_rts-true-screen_name-scotteg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "user_timeline.json-contributor_details-false-count-100-include_rts-true-screen_name-scotteg"; sourceTree = "<group>"; };
+		BA2E93B6127460AC14D28A1D /* Pods-TweetieAbstract-TweetieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieAbstract-TweetieTests.debug.xcconfig"; path = "Target Support Files/Pods-TweetieAbstract-TweetieTests/Pods-TweetieAbstract-TweetieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB9D196A08F19FC20BC19801 /* Pods_TweetieAbstract_Tweetie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetieAbstract_Tweetie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5062AC5CA57CC2B9206B1F /* Pods-TweetieAbstract-Tweetie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TweetieAbstract-Tweetie.release.xcconfig"; path = "Target Support Files/Pods-TweetieAbstract-Tweetie/Pods-TweetieAbstract-Tweetie.release.xcconfig"; sourceTree = "<group>"; };
+		F7D32BF5C86A4E449A79B3CD /* Pods_TweetieAbstract_MacTweetie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TweetieAbstract_MacTweetie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D8B8E3212D36D0EFDFE8D9 /* Pods_TweetieAbstract_TweetieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4744767928D3C7FAE2E4F954 /* Pods_TweetieAbstract_Tweetie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615EF3A9021FB51205ABA4EA /* Pods_TweetieAbstract_MacTweetie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,8 +201,24 @@
 		01A696DDD4CA4823442A8A4B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				23CF6AC095A68538B90F5546 /* Pods-TweetieAbstract-MacTweetie.debug.xcconfig */,
+				0626B05239ABBEDD4E8FA978 /* Pods-TweetieAbstract-MacTweetie.release.xcconfig */,
+				459066C47B1422DA15FB799B /* Pods-TweetieAbstract-Tweetie.debug.xcconfig */,
+				ED5062AC5CA57CC2B9206B1F /* Pods-TweetieAbstract-Tweetie.release.xcconfig */,
+				BA2E93B6127460AC14D28A1D /* Pods-TweetieAbstract-TweetieTests.debug.xcconfig */,
+				7892ACDCAB6E3117EA27C28D /* Pods-TweetieAbstract-TweetieTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		91838CC5BEC6F3348BE0BB0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7D32BF5C86A4E449A79B3CD /* Pods_TweetieAbstract_MacTweetie.framework */,
+				DB9D196A08F19FC20BC19801 /* Pods_TweetieAbstract_Tweetie.framework */,
+				531F35722FC3C94C7F3F15CC /* Pods_TweetieAbstract_TweetieTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9C1EEAD21DF424B5009705BD /* TweetieTests */ = {
@@ -216,6 +247,7 @@
 				9C2F4C6B1DE9C8A400307687 /* Products */,
 				9C2F4C941DE9C8ED00307687 /* Podfile */,
 				01A696DDD4CA4823442A8A4B /* Pods */,
+				91838CC5BEC6F3348BE0BB0A /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -474,9 +506,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C1EEADA1DF424B5009705BD /* Build configuration list for PBXNativeTarget "TweetieTests" */;
 			buildPhases = (
+				0EF86F8593534746216248A8 /* [CP] Check Pods Manifest.lock */,
 				9C1EEACD1DF424B5009705BD /* Sources */,
 				9C1EEACE1DF424B5009705BD /* Frameworks */,
 				9C1EEACF1DF424B5009705BD /* Resources */,
+				D29BAE9877C891FEBD695564 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -492,9 +526,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C2F4C7E1DE9C8A400307687 /* Build configuration list for PBXNativeTarget "Tweetie" */;
 			buildPhases = (
+				3C7A84EBD4541196A895CED8 /* [CP] Check Pods Manifest.lock */,
 				9C2F4C661DE9C8A300307687 /* Sources */,
 				9C2F4C671DE9C8A300307687 /* Frameworks */,
 				9C2F4C681DE9C8A300307687 /* Resources */,
+				E9AD473A7200A9CBD7886872 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -509,9 +545,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C2F4C911DE9C8CF00307687 /* Build configuration list for PBXNativeTarget "MacTweetie" */;
 			buildPhases = (
+				34F1F18AB271E280646A9F5A /* [CP] Check Pods Manifest.lock */,
 				9C2F4C811DE9C8CE00307687 /* Sources */,
 				9C2F4C821DE9C8CE00307687 /* Frameworks */,
 				9C2F4C831DE9C8CE00307687 /* Resources */,
+				1A95A7DA5EEB142AA3A1CB91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -617,6 +655,197 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EF86F8593534746216248A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TweetieAbstract-TweetieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A95A7DA5EEB142AA3A1CB91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TweetieAbstract-MacTweetie/Pods-TweetieAbstract-MacTweetie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability-macOS/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic-macOS/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa-macOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm-macOS/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources-macOS/RxRealmDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Then-macOS/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox-macOS/Unbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TweetieAbstract-MacTweetie/Pods-TweetieAbstract-MacTweetie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34F1F18AB271E280646A9F5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TweetieAbstract-MacTweetie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C7A84EBD4541196A895CED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TweetieAbstract-Tweetie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D29BAE9877C891FEBD695564 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TweetieAbstract-TweetieTests/Pods-TweetieAbstract-TweetieTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability-iOS/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm-iOS/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources-iOS/RxRealmDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Then-iOS/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox-iOS/Unbox.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TweetieAbstract-TweetieTests/Pods-TweetieAbstract-TweetieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9AD473A7200A9CBD7886872 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TweetieAbstract-Tweetie/Pods-TweetieAbstract-Tweetie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability-iOS/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm-iOS/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources-iOS/RxRealmDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Then-iOS/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox-iOS/Unbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TweetieAbstract-Tweetie/Pods-TweetieAbstract-Tweetie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C1EEACD1DF424B5009705BD /* Sources */ = {
@@ -733,6 +962,7 @@
 /* Begin XCBuildConfiguration section */
 		9C1EEAD81DF424B5009705BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA2E93B6127460AC14D28A1D /* Pods-TweetieAbstract-TweetieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = "";
@@ -748,6 +978,7 @@
 		};
 		9C1EEAD91DF424B5009705BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7892ACDCAB6E3117EA27C28D /* Pods-TweetieAbstract-TweetieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = "";
@@ -872,6 +1103,7 @@
 		};
 		9C2F4C7F1DE9C8A400307687 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 459066C47B1422DA15FB799B /* Pods-TweetieAbstract-Tweetie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -889,6 +1121,7 @@
 		};
 		9C2F4C801DE9C8A400307687 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED5062AC5CA57CC2B9206B1F /* Pods-TweetieAbstract-Tweetie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -906,6 +1139,7 @@
 		};
 		9C2F4C921DE9C8CF00307687 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23CF6AC095A68538B90F5546 /* Pods-TweetieAbstract-MacTweetie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
@@ -923,6 +1157,7 @@
 		};
 		9C2F4C931DE9C8CF00307687 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0626B05239ABBEDD4E8FA978 /* Pods-TweetieAbstract-MacTweetie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
