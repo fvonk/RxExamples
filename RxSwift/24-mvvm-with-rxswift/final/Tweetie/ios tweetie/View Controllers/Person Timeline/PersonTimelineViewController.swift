@@ -59,11 +59,25 @@ class PersonTimelineViewController: UIViewController {
 
   func bindUI() {
     //bind the title
-
-    //bind the tweets to the table view
+    viewModel.tweets
+      .asDriver()
+      .map{ [unowned self] in $0.isEmpty ? "None found" : self.viewModel.username }
+      .drive(rx.title)
+      .disposed(by: bag)
     
+    //bind the tweets to the table view
+    let ds = createTweetsDataSource()
+    viewModel.tweets
+      .asDriver()
+      .map{ [unowned self] in [TweetSection(model: self.viewModel.username, items: $0)] }
+      .drive(tableView.rx.items(dataSource: ds))
+      .disposed(by: bag)
   }
 
+  deinit {
+    print("deinit")
+  }
+  
   private func createTweetsDataSource() -> RxTableViewSectionedAnimatedDataSource<TweetSection> {
     let dataSource = RxTableViewSectionedAnimatedDataSource<TweetSection>(configureCell: { dataSource, tableView, indexPath, tweet in
       return tableView.dequeueCell(ofType: TweetCellView.self).then { cell in

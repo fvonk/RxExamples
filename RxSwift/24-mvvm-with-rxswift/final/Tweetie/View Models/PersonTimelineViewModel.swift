@@ -40,7 +40,14 @@ class PersonTimelineViewModel {
   let account: Driver<TwitterAccount.AccountStatus>
 
   // MARK: - Output
-  public var tweets: Driver<[Tweet]>!
+  public lazy var tweets: Driver<[Tweet]>! = {
+    fetcher.timeline
+      .asDriver(onErrorJustReturn: [])
+      .delay(RxTimeInterval(2))
+      .scan([], accumulator: { lastList, newList in
+        newList + lastList
+      })
+  }()
 
   // MARK: - Init
   init(account: Driver<TwitterAccount.AccountStatus>, username: String, apiType: TwitterAPIProtocol.Type = TwitterAPI.self) {
