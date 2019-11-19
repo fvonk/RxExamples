@@ -56,4 +56,8 @@ class EditTaskViewController: UIViewController, BindableType {
     titleView.becomeFirstResponder()
   }
 
+  deinit {
+    print(#function)
+    print("deinit")
+  }
 }

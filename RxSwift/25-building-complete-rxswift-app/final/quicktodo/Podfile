@@ -12,6 +12,6 @@ target 'QuickTodo' do
   pod 'NSObject+Rx', '~> 4.4'
   
   # Realm database
-  pod 'RealmSwift', '~> 3.13'
+  pod 'RealmSwift', '~> 3.20.0'
   pod 'RxRealm', '~> 0.7.6'
 end

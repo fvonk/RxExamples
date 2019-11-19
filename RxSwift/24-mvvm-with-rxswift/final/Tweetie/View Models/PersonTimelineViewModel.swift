@@ -43,7 +43,6 @@ class PersonTimelineViewModel {
   public lazy var tweets: Driver<[Tweet]>! = {
     fetcher.timeline
       .asDriver(onErrorJustReturn: [])
-      .delay(RxTimeInterval(2))
       .scan([], accumulator: { lastList, newList in
         newList + lastList
       })

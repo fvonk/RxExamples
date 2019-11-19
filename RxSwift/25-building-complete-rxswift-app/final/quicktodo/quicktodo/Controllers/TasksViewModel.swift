@@ -53,7 +53,7 @@ struct TasksViewModel {
       return self.taskService.delete(task: task)
     }
   }
-
+  
   func onUpdateTitle(task: TaskItem) -> Action<String, Void> {
     return Action { newTitle in
       return self.taskService.update(task: task, title: newTitle).map { _ in }
@@ -102,9 +102,17 @@ struct TasksViewModel {
         coordinator: this.sceneCoordinator,
         updateAction: this.onUpdateTitle(task: task)
       )
+      
       return this.sceneCoordinator
         .transition(to: Scene.editTask(editViewModel), type: .modal)
         .asObservable()
+    }
+  }(self)
+  
+  lazy var deleteAction: Action<TaskItem, Void> = { this in
+    return Action { task in
+      this.onDelete(task: task)
+      .execute()
     }
   }(self)
 }

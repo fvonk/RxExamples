@@ -53,23 +53,23 @@ class PersonTimelineViewModelTests: XCTestCase {
     XCTAssertEqual(viewModel.username, TestData.listId.username)
   }
 
-//  func test_whenInitialized_bindsTweets() {
-//    TwitterTestAPI.reset()
-//
-//    let accountSubject = PublishSubject<TwitterAccount.AccountStatus>()
-//    let viewModel = createViewModel(accountSubject.asDriver(onErrorJustReturn: .unavailable))
-//
-//    let allTweets = TestData.tweetsJSON
-//
-//    DispatchQueue.main.async {
-//      accountSubject.onNext(.authorized(AccessToken()))
-//      TwitterTestAPI.objects.onNext(allTweets)
-//    }
-//
-//    let emitted = try! viewModel.tweets.asObservable().take(1).toBlocking(timeout: 1).toArray()
-//    XCTAssertEqual(emitted[0].count, 3)
-//    XCTAssertEqual(emitted[0][0].id, 1)
-//    XCTAssertEqual(emitted[0][1].id, 2)
-//    XCTAssertEqual(emitted[0][2].id, 3)
-//  }
+  func test_whenInitialized_bindsTweets() {
+    TwitterTestAPI.reset()
+
+    let accountSubject = PublishSubject<TwitterAccount.AccountStatus>()
+    let viewModel = createViewModel(accountSubject.asDriver(onErrorJustReturn: .unavailable))
+
+    let allTweets = TestData.tweetsJSON
+
+    DispatchQueue.main.async {
+      accountSubject.onNext(.authorized(AccessToken()))
+      TwitterTestAPI.objects.onNext(allTweets)
+    }
+
+    let emitted = try! viewModel.tweets.asObservable().take(1).toBlocking(timeout: 1).toArray()
+    XCTAssertEqual(emitted[0].count, 3)
+    XCTAssertEqual(emitted[0][0].id, 1)
+    XCTAssertEqual(emitted[0][1].id, 2)
+    XCTAssertEqual(emitted[0][2].id, 3)
+  }
 }

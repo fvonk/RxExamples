@@ -84,7 +84,6 @@ class ListPeopleViewModel {
       .map { users in
         return (try? unbox(dictionaries: users, allowInvalidElements: true) as [User]) ?? []
       }
-      .delay(RxTimeInterval(2), scheduler: MainScheduler.instance)
       .bind(to: people)
       .disposed(by: bag)
   }
