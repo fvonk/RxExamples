@@ -119,4 +119,15 @@ struct TaskService: TaskServiceType {
     }
     return result ?? .empty()
   }
+  
+  @discardableResult
+  func statistics() -> Observable<TaskStatistics> {
+    tasks()
+      .map { tasks in
+        let dueTasks = tasks
+          .filter("checked == nil")
+          .count
+        return TaskStatistics(dueTasks, tasks.count - dueTasks)
+    }
+  }
 }

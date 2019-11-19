@@ -75,6 +75,10 @@ class TasksViewController: UIViewController, BindableType {
       }
       .subscribe(viewModel.deleteAction.inputs)
       .disposed(by: self.rx.disposeBag)
+    
+    viewModel.statistics
+      .bind(to: statisticsLabel.rx.text)
+      .disposed(by: self.rx.disposeBag)
   }
 
   private func configureDataSource() {

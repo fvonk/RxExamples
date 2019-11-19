@@ -115,4 +115,9 @@ struct TasksViewModel {
       .execute()
     }
   }(self)
+  
+  var statistics: Observable<String> {
+    taskService.statistics()
+      .map { "\($0)" }
+  }
 }

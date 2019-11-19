@@ -39,6 +39,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let tasksViewModel = TasksViewModel(taskService: service, coordinator: sceneCoordinator)
     let firstScene = Scene.tasks(tasksViewModel)
     sceneCoordinator.transition(to: firstScene, type: .root)
+    
+    
+    service.statistics()
+      .do(onNext: { _ in
+        UNUserNotificationCenter.current().requestAuthorization(options: .badge) { (_, _) in }
+      })
+      .map{ $0.0 }
+      .subscribe(onNext: { UIApplication.shared.applicationIconBadgeNumber = $0 })
+      .disposed(by: rx.disposeBag)
+    
     return true
   }
 }
